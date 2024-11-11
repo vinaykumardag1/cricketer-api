@@ -1,12 +1,16 @@
 require("dotenv").config()
 const express=require("express")
-
+const cors=require("cors")
 
 const api=require("./controllers/api")
 const bodyParser = require("body-parser")
 const app=express()
 
-
+app.use(cors(
+    {
+        origin:'*',
+    }
+))
 
 app.get("/",api.api_data)
 
